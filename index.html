@@ -5,13 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Your Thursday evening order with Good Eats</title>
+    <style>
+      body,
+      table,
+      td,
+      a {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      table,
+      td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+      img {
+        -ms-interpolation-mode: bicubic;
+      }
 
-    <link rel="stylesheet" href="style.css" />
+      /* RESET STYLES */
+      img {
+        border: 0;
+        outline: none;
+        text-decoration: none;
+      }
+      table {
+        border-collapse: collapse !important;
+      }
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+      }
+
+      /* iOS BLUE LINKS */
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+
+      /* ANDROID CENTER FIX */
+      div[style*="margin: 16px 0;"] {
+        margin: 0 !important;
+      }
+
+      @media screen and (max-width: 600px) {
+        .header div {
+          width: 50% !important;
+        }
+        .header__logo {
+          padding: 30px 0 0 30px !important;
+        }
+        .header__price {
+          padding: 30px 30px 0 0 !important;
+        }
+
+        .hero__money {
+          display: none;
+        }
+        .hero__order p {
+          margin: 0 0 0 0 !important;
+          padding: 30px 0 0 30px !important;
+        }
+        .pdf {
+          padding: 20px !important;
+        }
+        .payment__visa {
+          max-width: 195px !important;
+        }
+        .contact {
+          max-width: 125px !important;
+        }
+        .footer__link.first {
+          padding: 20px 0 15px 0 !important;
+        }
+        .footer__link {
+          padding: 0px 0 15px 0 !important;
+        }
+        .table__bottom {
+          margin-bottom: 0 !important;
+        }
+      }
+    </style>
   </head>
   <body style="margin: 0; padding: 0; background-color: #d6d6d5">
     <center>
       <!-- START OF EMAIL -->
-      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#d6d6d5" style="margin-bottom: 15px">
+      <table class="table__bottom" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#d6d6d5" style="margin-bottom: 15px">
         <tr>
           <td align="center" valign="top">
             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; background-color: #ffffff">
@@ -118,12 +201,6 @@
                                                   Total $39.63
                                                   <br />
                                                   September 1, 2002
-
-                                                  <!-- <p style="margin: 0 40px 0 0">
-                                                    Total $39.63
-                                                    <br />
-                                                    September 1, 2002
-                                                  </p> -->
                                                 </td>
                                               </tr>
                                             </table>
@@ -188,9 +265,12 @@
                                                   align="center"
                                                   valign="top"
                                                   style="text-align: left; font-family: Helvetica, Arial, sans-serif"
+                                                  class="hero__order"
                                                 >
-                                                  <p style="font-size: 34px; margin: 30px 0 0 45px">Thanks for ordering, Christopher</p>
-                                                  <p style="font-size: 20px; margin: 15px 0 0 45px">
+                                                  <p class="hero__order" style="font-size: 34px; margin: 30px 0 0 45px">
+                                                    Thanks for ordering, Christopher
+                                                  </p>
+                                                  <p class="hero__order" style="font-size: 20px; margin: 15px 0 0 45px">
                                                     Here's your receipt for Santiago's Restaurant
                                                   </p>
 
@@ -249,14 +329,13 @@
                                               class="deviceWidth"
                                             >
                                               <tr>
-                                                <td align="center" valign="top" style="font-size: 14px">
+                                                <td class="hero__money" align="center" valign="top" style="font-size: 14px">
                                                   <img
                                                     src="images/money.png"
                                                     width="100%"
                                                     height="144px"
                                                     style="margin: 0 0 20px 0; padding: 0; border: none; display: block; max-width: 144px"
                                                     border="0"
-                                                    class="img"
                                                     alt="Dollar bill"
                                                     title="Dollar bill"
                                                   />
@@ -347,7 +426,7 @@
                         bgcolor="#ffffff"
                       >
                         <tr>
-                          <td align="center" valign="center" style="font-size: 16px; max-width: 600px">
+                          <td class="pdf" align="center" valign="center" style="font-size: 16px; max-width: 600px">
                             <p style="background-color: rgb(210, 237, 226); max-width: 470px; padding: 20px 0px; color: #000000; margin: 0">
                               <img
                                 src="images/pdfdownload.png"
@@ -406,6 +485,7 @@
                             <!-- payment -->
                             <tr>
                               <td
+                                class="payment__title"
                                 align="left"
                                 valign="top"
                                 style="font-family: Arial, Helvetica, sans-serif; font-weight: 100; font-size: 16px; padding-left: 50px"
@@ -468,7 +548,10 @@
                                       </td>
                                       <td align="left" valign="top" width="195">
                                       <![endif]-->
-                                      <div style="display: inline-block; max-width: 395px; vertical-align: top; width: 100%">
+                                      <div
+                                        class="payment__visa"
+                                        style="display: inline-block; max-width: 395px; vertical-align: top; width: 100%"
+                                      >
                                         <table
                                           align="left"
                                           border="0"
@@ -596,8 +679,8 @@
                                       <img
                                         src="images/paella-ged86f68d8_1920.jpg"
                                         width="100%"
-                                        height="200"
-                                        style="margin: 0; padding: 0; border: none; display: block; max-width: 500px"
+                                        height="220"
+                                        style="margin: 0; padding: 0; border: none; display: block; max-width: 600px"
                                         border="0"
                                         class="img"
                                         alt="plate of spanish food"
@@ -648,7 +731,7 @@
                             <tr>
                             <td align="left" valign="top" width="295">
                             <![endif]-->
-                            <div style="display: inline-block; max-width: 295px; vertical-align: top; width: 100%">
+                            <div class="contact" style="display: inline-block; max-width: 295px; vertical-align: top; width: 100%">
                               <table
                                 align="left"
                                 border="0"
@@ -671,7 +754,7 @@
                             </td>
                             <td align="left" valign="top" width="295">
                             <![endif]-->
-                            <div style="display: inline-block; max-width: 295px; vertical-align: top; width: 100%">
+                            <div class="contact" style="display: inline-block; max-width: 295px; vertical-align: top; width: 100%">
                               <table
                                 align="left"
                                 border="0"
@@ -742,7 +825,7 @@
                               <tr>
                                 <td align="center" valign="top">
                                   <tr>
-                                    <td align="center" valign="top" style="font-size: 14px">
+                                    <td align="center" valign="top" style="font-size: 0px">
                                       <p style="width: 100%; max-width: 550px; border-top: 1px solid #444444"></p>
                                     </td>
                                   </tr>
@@ -784,17 +867,32 @@
                                           class="deviceWidth"
                                         >
                                           <tr>
-                                            <td align="left" valign="top" style="font-size: 14px; padding-left: 25px; padding-bottom: 15px">
+                                            <td
+                                              class="footer__link first"
+                                              align="left"
+                                              valign="top"
+                                              style="font-size: 14px; padding-left: 25px; padding-bottom: 15px; padding-top: 10px"
+                                            >
                                               <a style="color: #ffffff; text-decoration: none" href="#">Forgot password</a>
                                             </td>
                                           </tr>
                                           <tr>
-                                            <td align="left" valign="top" style="font-size: 14px; padding-left: 25px; padding-bottom: 15px">
+                                            <td
+                                              class="footer__link"
+                                              align="left"
+                                              valign="top"
+                                              style="font-size: 14px; padding-left: 25px; padding-bottom: 15px"
+                                            >
                                               <a style="color: #ffffff; text-decoration: none" href="#">Privacy</a>
                                             </td>
                                           </tr>
                                           <tr>
-                                            <td align="left" valign="top" style="font-size: 14px; padding-left: 25px; padding-bottom: 15px">
+                                            <td
+                                              class="footer__link"
+                                              align="left"
+                                              valign="top"
+                                              style="font-size: 14px; padding-left: 25px; padding-bottom: 15px"
+                                            >
                                               <a style="color: #ffffff; text-decoration: none" href="#">Terms</a>
                                             </td>
                                           </tr>
@@ -815,7 +913,7 @@
                                           class="deviceWidth"
                                         >
                                           <tr>
-                                            <td align="left" valign="top" style="font-size: 13px; line-height: 17px">
+                                            <td align="left" valign="top" style="font-size: 13px; line-height: 17px; padding-top: 10px">
                                               <span style="color: #9d9da3">Good Eats Technologies</span>
                                               <br />
                                               <a href="#" style="text-decoration: none">
